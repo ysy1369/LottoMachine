@@ -15,13 +15,24 @@ public:
 	~IOHandler();
 
 	/* INPUT METHODS */
+
+	/* OUTPUT METHODS */
+	void outputStartUpScreen();
+	void outputClearScreenAfterXSeconds(int sec);
+
+
+	/* INPUT BASIC METHODS */
 	string inputStringAtConsole();
 	int inputIntegerAtConsole();
 
-	/* OUTPUT METHODS */
+	/* OUTPUT BASIC METHODS */
 	void outputStringtoConsole(string str);
+	void outputStringtoConsoleWithNextLine(string str);
 	void outputNextLine();
 
+	/* OTHER METHODS */
+	void cinBufferClear();
+	bool cinFailCheck();
 
 };
 

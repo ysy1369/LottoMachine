@@ -28,3 +28,12 @@ int* LottoMachine::getPickedNumbers()
 void LottoMachine::calcGrade(Ticket myTicket)
 {
 }
+
+bool LottoMachine::chkOverlap(int* ticketArr,int arrSize, int inputNum)
+{
+	for(int i=0; i<arrSize ;i++) {
+		if(ticketArr[i] == inputNum)
+			return true;
+	}
+	return false;
+}

@@ -19,5 +19,7 @@ public:
 	void roll();
 	int* getPickedNumbers();
 	void calcGrade(Ticket myTicket);
+
+	bool chkOverlap(int* ticketArr,int arrSize, int inputNum);
 };
 #endif
