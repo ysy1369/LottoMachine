@@ -10,38 +10,38 @@ TaskManager::~TaskManager()
 	
 /* OTHER METHODS*/
 void TaskManager::showStartUpScreen(IOHandler ioh)						
-{// Ã¹ È­¸é Ç¥½Ã
+{// Ã¹ È­ï¿½ï¿½ Ç¥ï¿½ï¿½
 	ioh.outputStartUpScreen();
 	ioh.outputClearScreenAfterXSeconds(2);
 }
 
 void TaskManager::registerMyTicket(Ticket& t, IOHandler ioh, LottoMachine ltm, int tCnt)									
-{// Æ¼ÄÏ¿¡ ¹øÈ£ ÀÔ·Â & ±× Æ¼ÄÏÀ» ¹İÈ¯
+{// Æ¼ï¿½Ï¿ï¿½ ï¿½ï¿½È£ ï¿½Ô·ï¿½ & ï¿½ï¿½ Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 
 	/* DEFINE TEMPORARY VARIABLES */
 	int numbers[6] = {0,};
 	string cntStr = "";
 	
 	cntStr = '1' + tCnt;
-	ioh.outputStringtoConsoleWithNextLine(cntStr+"¹øÂ° Æ¼ÄÏ");
+	ioh.outputStringtoConsoleWithNextLine(cntStr+"ï¿½ï¿½Â° Æ¼ï¿½ï¿½");
 
 
 	/* INPUT 6 NUMBERS on TICKET */
 	for(int i=0 ; i<6 ;i++) {
 		cntStr='1'+i;
 		
-		ioh.outputStringtoConsole(cntStr+"¹øÂ° ¼ıÀÚ ÀÔ·Â:");
+		ioh.outputStringtoConsole(cntStr+"ï¿½ï¿½Â° ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½:");
 		int tmpNum = ioh.inputIntegerAtConsole();
 		ioh.outputNextLine();
 
 		if(tmpNum == INT_ERROR) {//INPUT INTEGER EXCEPTION
 			i--;
 			continue;
-		} else if(ltm.chkOverlap(numbers, i, tmpNum) /*Áßº¹Ã¼Å©*/) {
-			ioh.outputStringtoConsoleWithNextLine("¼­·Î Áßº¹µÇÁö ¾Ê´Â ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ¼Å¾ß ÇÕ´Ï´Ù.");
+		} else if(ltm.chkOverlap(numbers, i, tmpNum) /*ï¿½ßºï¿½Ã¼Å©*/) {
+			ioh.outputStringtoConsoleWithNextLine("ï¿½ï¿½ï¿½ï¿½ ï¿½ßºï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´ï¿½ ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½Ô·ï¿½ï¿½Ï¼Å¾ï¿½ ï¿½Õ´Ï´ï¿½.");
 			i--;
 			continue;
-		} else if/*1~45 ¼ıÀÚ*/°íÄ¡°í) {
+		} else if/*1~45 ï¿½ï¿½ï¿½ï¿½*/ï¿½ï¿½Ä¡ï¿½ï¿½) {
 			
 		
 		}
@@ -56,7 +56,7 @@ void TaskManager::registerMyTicket(Ticket& t, IOHandler ioh, LottoMachine ltm, i
 }
 
 void TaskManager::execLottoMachine(LottoMachine& machine, int pickedNum[6])	
-{// ·Î¶Ç ¸Ó½Å ½ÇÇà => 7°³ÀÇ ¼ıÀÚ(6°³ ´çÃ·¹øÈ£ + º¸³Ê½º¹øÈ£)°¡ ³ª¿Â´Ù.
+{// ï¿½Î¶ï¿½ ï¿½Ó½ï¿½ ï¿½ï¿½ï¿½ï¿½ => 7ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(6ï¿½ï¿½ ï¿½ï¿½Ã·ï¿½ï¿½È£ + ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½È£)ï¿½ï¿½ ï¿½ï¿½ï¿½Â´ï¿½.
 
 	machine.roll();
 	pickedNum = machine.getPickedNumbers();
@@ -64,7 +64,7 @@ void TaskManager::execLottoMachine(LottoMachine& machine, int pickedNum[6])
 }
 
 bool TaskManager::selectOneMoreTime(IOHandler ioh)
-{// Æ¼ÄÏÀ» ÇÑ Àå ´õ µî·ÏÇÒ °ÍÀÎÁö ¿©ºÎ È®ÀÎ
+{// Æ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
 	string str = "";
 	bool selectFlag = true;
@@ -95,9 +95,11 @@ bool TaskManager::selectOneMoreTime(IOHandler ioh)
 	return selectFlag;
 }
 
-void TaskManager::checkMyGrade(int* pickedNumbers, Ticket* myTicket)	// ´çÃ· ¿©ºÎ Check => ¸î µîÀÎÁö Check
+void TaskManager::checkMyGrade(int* pickedNumbers, Ticket* myTicket)	// ï¿½ï¿½Ã· ï¿½ï¿½ï¿½ï¿½ Check => ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Check
 {
 }
-void TaskManager::showMyGrade(Ticket* myTicket)							// ³» µî¼ö º¸±â
+void TaskManager::showMyGrade(Ticket* myTicket)							// ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 {
 }
+
+//ìƒˆ ì‘ì—…ìì˜ ì²«ë²ˆì§¸ ë³€ê²½ì‚¬í•­
