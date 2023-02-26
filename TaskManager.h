@@ -13,14 +13,17 @@ public:
 	~TaskManager();
 	
 	/* OTHER METHODS*/
-	void showStartUpScreen(IOHandler ioh);						// ц╧ х╜╦И г╔╫ц
+	void showStartUpScreen(IOHandler ioh);						// ц╧ х╜О©╫О©╫ г╔О©╫О©╫
 	//void registerMyTicket(Ticket& myTicket);					
-	void registerMyTicket(Ticket& t, IOHandler ioh, LottoMachine ltm, int tCnt);							// ф╪до©║ ╧Ьхё ют╥б & ╠в ф╪дою╩ ╧щх╞
-	void execLottoMachine(LottoMachine& machine, int pickedNum[6]);				// ╥н╤г ╦с╫е ╫ггЮ
-																//  => 7╟Ёюг ╪Щюз(6╟Ё ╢Гц╥╧Ьхё + ╨╦Ёй╫╨╧Ьхё)╟║ Ё╙©б╢ы.
-	bool selectOneMoreTime(IOHandler ioh);									// ф╪дою╩ гя юЕ ╢У ╣Н╥огр ╟мюнаЖ ©╘╨н х╝юн
-	void checkMyGrade(int* pickedNumbers, Ticket* myTicket);	// ╢Гц╥ ©╘╨н Check => ╦Н ╣НюнаЖ Check
-	void showMyGrade(Ticket* myTicket);							// Ё╩ ╣Н╪Ж ╨╦╠Б
+	void registerMyTicket(Ticket& t, IOHandler ioh, LottoMachine ltm, int tCnt);							// ф╪О©╫о©О©╫ О©╫О©╫хё О©╫т╥О©╫ & О©╫О©╫ ф╪О©╫О©╫О©╫О©╫ О©╫О©╫х╞
+	void execLottoMachine(LottoMachine& machine, int pickedNum[6]);				// О©╫н╤О©╫ О©╫с╫О©╫ О©╫О©╫О©╫О©╫
+																//  => 7О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫(6О©╫О©╫ О©╫О©╫ц╥О©╫О©╫хё + О©╫О©╫О©╫й╫О©╫О©╫О©╫хё)О©╫О©╫ О©╫О©╫О©╫б╢О©╫.
+	bool selectOneMoreTime(IOHandler ioh);									// ф╪О©╫О©╫О©╫О©╫ О©╫О©╫ О©╫О©╫ О©╫О©╫ О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ О©╫О©╫О©╫О©╫ х╝О©╫О©╫
+	void checkMyGrade(int* pickedNumbers, Ticket* myTicket);	// О©╫О©╫ц╥ О©╫О©╫О©╫О©╫ Check => О©╫О©╫ О©╫О©╫О©╫О©╫О©╫О©╫ Check
+	void showMyGrade(Ticket* myTicket);							// О©╫О©╫ О©╫О©╫О©╫ О©╫О©╫О©╫О©╫
 
 };
 #endif
+
+//Л╡╚К╡┬Л╖╦ КЁ─Й╡╫Л┌╛М∙╜
+//К▒░К╡┬Л╖╦ КЁ─Й╡╫Л┌╛М∙╜
